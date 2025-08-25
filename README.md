@@ -134,7 +134,7 @@ flutter test test/charge_locations_bloc_test.dart
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/your-username/voltspot.git
+   git clone https://github.com/mhdamhd/voltspot.git
    cd voltspot
    ```
 
@@ -154,22 +154,16 @@ flutter test test/charge_locations_bloc_test.dart
 
 ## 💡 Challenges & Solutions
 
-* **Debouncing search queries**:
-  Solved using `rxdart`’s `debounceTime` and `switchMap` in the Bloc transformer.
+* **Debouncing search queries**  
+  Solved using `rxdart`’s `debounceTime` and `switchMap` in the Bloc transformer to prevent unnecessary API calls.
 
-* **Model → Entity mapping**:
+* **Model → Entity mapping**  
   Introduced `BaseModel<T extends BaseEntity>` and helper extensions to ensure consistent conversion across lists and single objects.
 
-* **Resetting state on search clear**:
-  Implemented `ResetChargeLocationsEvent` to restore the Bloc to its initial state when the search field is cleared.
+* **Handling empty search input**  
+  Instead of a separate reset event, the Bloc now checks for empty input directly and emits the initial state, ensuring the UI resets properly without extra events.
 
-* **Testing asynchronous/debounced events**:
-  Used `fake_async` with microtask flushing to simulate passage of time and assert state sequences.
-
----
-
-## 📸 Screenshots
-
-*(Add some emulator screenshots of the search screen, results list, and details screen here.)*
+* **Testing asynchronous/debounced events**  
+  Used `fake_async` with microtask flushing to simulate passage of time and assert state sequences reliably.
 
 ---
