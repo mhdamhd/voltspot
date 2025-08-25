@@ -13,12 +13,6 @@ The project demonstrates **Clean Architecture**, **BLoC state management**, and 
 
 ---
 
-Exactly 👍 — the assignment expects you not just to **show** Clean Architecture and BLoC, but to **justify** them.
-
-Here’s a refined section you can drop directly into your README:
-
----
-
 ## 🏛️ Architecture
 
 VoltSpot follows **Clean Architecture** principles, dividing the codebase into three main layers:
